@@ -1,0 +1,18 @@
+/* Add here all your css styles (customizations) */
+.da-slider{    
+	background: transparent url(../img/lab.jpg) repeat 0% 0%;
+}
+.da-slide p.hero-paragraph {
+    top: 230px;
+}
+
+.footer {
+    background: #1c426f;
+}
+
+.copyright {
+    background-color:#fff;
+}
+.copyright p {
+    color: #e67e22;
+}
