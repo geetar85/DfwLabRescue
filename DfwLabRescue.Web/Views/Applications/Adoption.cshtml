@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "Adoption";
+    Layout = "~/Views/Shared/_formLayout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Adoption</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="~/">Home</a></li>
+            <li class="active">Apply for Adoption</li>
+        </ul>
+    </div>
+</div><!--/breadcrumbs-->
+
+<div class="container content">
+
+    <div class="panel panel-orange">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-tasks"></i> Apply for Adoption
+            </h3>
+        </div>
+        <div class="panel-body bold_brown_text">
+
+            <p class="lead">
+                If you are interested in adopting a rescued Labrador Retriever, please complete the form below and select the submit button. You will be contacted by the adoption coordinator. Please use the tab button to move through the fields, enter submits your form.  Thank you for your time.
+            </p>
+            <p>
+                <strong>
+                    You MUST read "What is a Labrador Retriever" before completing this application.
+                </strong>
+            </p>
+            <p>
+                <strong>
+                    PLEASE NOTE DFWLRC RESCUE RESERVES THE RIGHT TO REFUSE OR DENY ANY APPLICATION.
+                </strong>
+            </p>
+            <form action="~/applications/adoption" method="post" enctype="multipart/form-data" class="sky-form">
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-8">
+                            <label>1. Please provide the following contact information:</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-barcode"></i>
+                                <input type="text" name="paypal" placeholder="PayPal Confirmation #" />
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                <input type="text" name="name" placeholder="Name">
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-envelope"></i>
+                                <input type="email" name="email" placeholder="E-mail">
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-phone"></i>
+                                <input type="tel" name="phone" placeholder="Phone">
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>We place dogs specifically in the Dallas-Fort Worth area. If you are out of our area, please check our Informational Links page to locate rescue groups in other parts of the state or country.</label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-book"></i>
+                                <input type="text" name="name" placeholder="Street Address">
+                            </label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-book"></i>
+                                <input type="email" name="email" placeholder="Address (Cont.)">
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-book"></i>
+                                <input type="text" name="name" placeholder="City">
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-book"></i>
+                                <input type="email" name="email" placeholder="State" disabled value="Texas">
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="input">
+                                <i class="icon-append fa fa-book"></i>
+                                <input type="email" name="email" placeholder="Zipcode">
+                            </label>
+                        </section>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <section>
+                        <label>2. What is your main reason for wanting to adopt a Rescued Labrador?</label>
+                        <label class="textarea">
+                            <i class="icon-append fa fa-comment"></i>
+                            <textarea rows="5" name="introduction" placeholder="" maxlength="500"></textarea>
+                        </label>
+                    </section>
+
+                </fieldset>
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>3. Please list the breed, sex, age of the dog(s) you presently own.  Are they spayed/neutered?  Are they indoor and/or outdoor? </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>Dog 1</label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="interested">
+                                    <option value="none" selected="" disabled="">Breed</option>
+                                    <option value="1">Lab</option>
+                                    <option value="2">Lab-mix</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="budget">
+                                    <option value="0" selected="" disabled="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Color</option>
+                                    <option value="1">Black</option>
+                                    <option value="2">Yellow</option>
+                                    <option value="3">Chocolate</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Inside/Outside</option>
+                                    <option value="1">Indoor</option>
+                                    <option value="2">Outdoor</option>
+                                    <option value="3">50/50</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Neutered</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>Dog 2</label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="interested">
+                                    <option value="none" selected="" disabled="">Breed</option>
+                                    <option value="1">Lab</option>
+                                    <option value="2">Lab-mix</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="budget">
+                                    <option value="0" selected="" disabled="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Color</option>
+                                    <option value="1">Black</option>
+                                    <option value="2">Yellow</option>
+                                    <option value="3">Chocolate</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Inside/Outside</option>
+                                    <option value="1">Indoor</option>
+                                    <option value="2">Outdoor</option>
+                                    <option value="3">50/50</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Neutered</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>Dog 3</label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="interested">
+                                    <option value="none" selected="" disabled="">Breed</option>
+                                    <option value="1">Lab</option>
+                                    <option value="2">Lab-mix</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="budget">
+                                    <option value="0" selected="" disabled="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Color</option>
+                                    <option value="1">Black</option>
+                                    <option value="2">Yellow</option>
+                                    <option value="3">Chocolate</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Inside/Outside</option>
+                                    <option value="1">Indoor</option>
+                                    <option value="2">Outdoor</option>
+                                    <option value="3">50/50</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-4">
+                            <label class="select">
+                                <select name="color">
+                                    <option value="0" selected="" disabled="">Neutered</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-question-circle"></i>
+                                <input type="text" name="dogfood" placeholder="What brand of dog food do they eat?">
+                            </label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-question-circle"></i>
+                                <input type="text" name="dogfood" placeholder="What type of heartworm preventative do you use?">
+                            </label>
+                        </section>
+                    </div>
+
+                </fieldset>
+                <fieldset>
+
+                    <section>
+                        <label>4. Please list any other pets you presently own.</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <input type="text" name="other-pets" placeholder="List any other pets" />
+                        </label>
+                    </section>
+
+                </fieldset>
+                <fieldset>
+
+                    <section>
+                        <label>5. How many members are in your household?  How many Adults?  How many children (Please list their ages.)?  Are there any special needs that your family has that you feel we should be aware of?</label>
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="5" name="membersoffamily" placeholder="Other members of the family" maxlength="500"></textarea>
+                        </label>
+                    </section>
+
+                </fieldset>
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>6. Please answer some questions about the living conditions at your home.</label>
+                        </section>
+                    </div>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="Is anyone home during the day?  If so, whom?" ></textarea>
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="Approximately how long each weekday will the dog be left alone?"></textarea>
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="What kind of fence does your yard have?   How tall is it?  What is the size of the enclosed area?"></textarea>
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="Where will the dog be kept during the day?  Please explain."></textarea>
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="Where will the dog sleep at night?"></textarea>
+                        </label>
+                    </section>
+                    <section class="col col-6">
+                        <label class="textarea">
+                            <i class="icon-append fa fa-question-circle"></i>
+                            <textarea rows="3" name="homeduringday" placeholder="Where will the dog stay if you and your family go out of town?"></textarea>
+                        </label>
+                    </section>
+
+
+                </fieldset>
+                <footer>
+                    <button type="submit" class="button">Submit Application</button>
+                </footer>
+                <div class="message">
+                    <i class="rounded-x fa fa-check"></i>
+                    <p>Thanks for your order!<br>We'll contact you very soon.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

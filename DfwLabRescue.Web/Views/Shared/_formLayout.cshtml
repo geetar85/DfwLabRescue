@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Css {
+    <link rel="stylesheet" href="/assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+}
+
+@RenderBody()
+
+@section pluginJavaScript {
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery-ui.min.js"></script>
+    <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery.form.min.js"></script>
+}
+
+
+@section pageJavaScript {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+
+            $('.ckeditor').each(function (el) {
+                CKEDITOR.replace(el, { toolbar: [[]] });
+            });
+        });
+    </script>
+}

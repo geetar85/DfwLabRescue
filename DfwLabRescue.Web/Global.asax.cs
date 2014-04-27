@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using DfwLabRescue.Web.App_Start;
 
 namespace DfwLabRescue.Web
 {
@@ -17,7 +18,10 @@ namespace DfwLabRescue.Web
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            DbConfig.LoadDb();
         }
+
     }
 }

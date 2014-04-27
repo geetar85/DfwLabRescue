@@ -16,3 +16,18 @@
 .copyright p {
     color: #e67e22;
 }
+
+
+.dummy {
+    padding-top: 63%; /* 4:3 aspect ratio */
+}
+.dog {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.dog .img-responsive{
+    min-width:700px;
+}

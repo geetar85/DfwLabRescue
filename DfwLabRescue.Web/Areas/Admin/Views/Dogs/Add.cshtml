@@ -1,0 +1,152 @@
+﻿@model DfwLabRescue.Web.Models.Dog
+
+@section Css {
+    <link rel="stylesheet" href="/assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Dogs</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="~/Admin/Dogs">Admin</a></li>
+            <li><a href="~/Admin/Dogs">Dogs</a></li>
+            <li class="active">Add Dog</li>
+        </ul>
+    </div>
+</div><!--/breadcrumbs-->
+
+<div class="container content">
+    <!-- Order Form -->
+    <form action="~/admin/dogs/add" method="post" enctype="multipart/form-data" class="sky-form">
+        <header>Add New Dog</header>
+
+        <fieldset>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-user"></i>
+                        <input type="text" name="name" placeholder="Name">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-calendar"></i>
+                        <input type="text" name="dob" placeholder="Date of Birth" class="has-datepicker">
+                    </label>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-envelope"></i>
+                        <input type="email" name="email" placeholder="E-mail">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-phone"></i>
+                        <input type="tel" name="phone" placeholder="Phone">
+                    </label>
+                </section>
+            </div>
+
+                <section>
+                    <label class="textarea">
+                        <i class="icon-append fa fa-comment"></i>
+                        <textarea rows="5" name="introduction" placeholder="" maxlength="500"></textarea>
+                    </label>
+                    <label class="textarea">
+                        <i class="icon-append fa fa-comment"></i>
+                        <textarea rows="20" name="full-story" placeholder="Full Story... displays on detail page for each dog (limit 5000 characters)" maxlength="5000"></textarea>
+                    </label>
+                </section>
+        </fieldset>
+
+        <fieldset>
+            <div class="row">
+                <section class="col col-4">
+                    <label class="select">
+                        <select name="interested">
+                            <option value="none" selected disabled>Breed</option>
+                            <option value="1">Lab</option>
+                            <option value="2">Lab-mix</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col col-4">
+                    <label class="select">
+                        <select name="budget">
+                            <option value="0" selected disabled>Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col col-4">
+                    <label class="select">
+                        <select name="color">
+                            <option value="0" selected disabled>Color</option>
+                            <option value="1">Black</option>
+                            <option value="2">Yellow</option>
+                            <option value="3">Chocolate</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-calendar"></i>
+                        <input type="text" name="start" id="start" placeholder="Expected start date">
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="input">
+                        <i class="icon-append fa fa-calendar"></i>
+                        <input type="text" name="finish" id="finish" placeholder="Expected finish date">
+                    </label>
+                </section>
+            </div>
+
+            <section>
+                <label for="file" class="input input-file">
+                    <div class="button"><input type="file" name="file" multiple onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" placeholder="Include some file" readonly>
+                </label>
+            </section>
+
+        </fieldset>
+        <footer>
+            <button type="submit" class="btn-u">Send request</button>
+            <div class="progress"></div>
+        </footer>
+        <div class="message">
+            <i class="rounded-x fa fa-check"></i>
+            <p>Thanks for your order!<br>We'll contact you very soon.</p>
+        </div>
+    </form>
+    <!-- End Order Form -->
+
+</div>
+@section pluginJavaScript {
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery-ui.min.js"></script>
+    <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/forms/addDog.js"></script>
+}
+
+
+@section pageJavaScript {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+            AddDogForm.initAddDogForm();
+            CKEDITOR.replace('introduction', { toolbar: [[]] });
+        });
+    </script>
+}
