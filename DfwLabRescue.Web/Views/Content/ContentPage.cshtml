@@ -1,0 +1,35 @@
+﻿@model DfwLabRescue.Web.Models.Content
+@{
+    ViewBag.Title = "ContentPage";
+}
+
+@section Css {
+    <!-- CSS Pages Style -->
+    <link rel="stylesheet" href="@Model.CssFile">
+}
+
+@if (Model.Breadcrumbs)
+{
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">@Model.Title</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="~/">Home</a></li>
+                <li class="active">@Model.Title</li>
+            </ul>
+        </div>
+    </div><!--/breadcrumbs-->
+}
+
+<div id="contentDiv">
+    @Html.Raw(Model.RawHtml)
+</div>
+
+@section pageJavaScript {
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+}

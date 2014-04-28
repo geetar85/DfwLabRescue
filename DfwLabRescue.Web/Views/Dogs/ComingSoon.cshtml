@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Dogs";
+    var dogs = (IEnumerable<DfwLabRescue.Web.Models.Dog>)ViewBag.Dogs;
+}
+
+@section Css {
+    <link rel="stylesheet" href="/assets/css/pages/portfolio-v1.css">
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Dogs Coming Soon</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Coming Soon</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content">
+    <p class="margin-bottom-30"><span class="dropcap-bg">T</span><strong>he following is a representative list of Labs available for adoption through the Dallas | Fort Worth Labrador Retriever 
+    Rescue program. On average we have approximately 30 Labs in foster homes at any given time. Labs come into the program and are adopted daily, 
+    so this is not always a complete listing. All dogs are spayed or neutered (puppies are only spayed or neutered if of appropriate age prior to adoption) 
+    and tested heartworm negative unless otherwise stated. Effective April 1, 2012, Adoption fees for an adult Lab is $275 and puppies (6 months and under) 
+    are $350.</strong></p>
+
+    <div class="shadow-wrapper ">
+        <blockquote class="hero box-shadow shadow-effect-2">
+            <p><em>"It came to me that every time I lose a dog they take a piece of my heart with them, and every new dog who comes into my life gifts me
+                with a piece of their heart. If I live long enough all the components of my heart will be dog, and I will become as generous and loving as they are."</em></p>
+            <small><em>Anonymous</em></small>
+        </blockquote>
+    </div>
+
+    <div class="headline"><h2>Dogs Coming Soon</h2></div>
+    
+    @Html.Partial("_DogPortfolio", dogs)
+
+
+</div>
+<!--/container-->
+<!--=== End Content Part ===-->
+
+@section pageJavaScript {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+        });
+    </script>
+}

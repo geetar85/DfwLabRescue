@@ -1,0 +1,30 @@
+﻿@model System.Collections.Generic.IEnumerable<DfwLabRescue.Web.Models.Dog>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    var dog = Model.ElementAt(i);
+    if ((i % 2) == 0)
+    {
+        @:<div class="row">
+        }
+
+        <div class="col-sm-6">
+            <div class="view view-tenth">
+                <div class="dummy"></div>
+                <div class="dog">
+                    <img class="img-responsive" src="@dog.Photo1" alt="" />
+                    <div class="mask">
+                        <h2>@dog.Name - @dog.Age @dog.Gender</h2>
+                        <p>@dog.Summary</p>
+                        <a href="@Url.Action("Dog", new {id=dog.Id, Name = dog.Name})" class="info">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    if ((i % 2) != 0 || i == (Model.Count()-1) )
+    {
+        @:</div>
+    }
+}

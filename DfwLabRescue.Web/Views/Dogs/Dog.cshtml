@@ -1,0 +1,102 @@
+﻿@model DfwLabRescue.Web.Models.Dog
+
+@{
+    ViewBag.Title = "Dogs";
+}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">@Model.Name - @Model.Age @Model.Gender</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="/">Home</a></li>
+            @if (Model.AdoptionStatus == DfwLabRescue.Web.Models.AdoptionStatus.Adopted)
+            {
+                <li><a href="@Url.Action("Adopted")">Adopted Dogs</a></li>
+            }
+            else if (Model.AdoptionStatus == DfwLabRescue.Web.Models.AdoptionStatus.AdoptionPending)
+            {
+                <li><a href="@Url.Action("PendingAdoption")">Pending Adoption</a></li>
+            }
+            else if (Model.AdoptionStatus == DfwLabRescue.Web.Models.AdoptionStatus.Available)
+            {
+                <li><a href="@Url.Action("Available")">Available Dogs</a></li>
+            }
+            else if (Model.AdoptionStatus == DfwLabRescue.Web.Models.AdoptionStatus.ComingSoon)
+            {
+                <li><a href="@Url.Action("ComingSoon")">Dogs Coming Soon</a></li>
+            }
+            <li class="active">@Model.Name</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row portfolio-item margin-bottom-50">
+        <!-- Carousel -->
+        <div class="col-md-7">
+            <div class="carousel slide carousel-v1" id="myCarousel">
+                <div class="carousel-inner">
+                    @if (!string.IsNullOrEmpty(Model.Photo1))
+                    {
+                    <div class="item active">
+                        <div class="dummy"></div>
+                        <div class="dog">
+                            <img class="img-responsive" alt="" src="@Model.Photo1">
+                            <div class="carousel-caption">
+                                <p>@Model.Name - @Model.Age @Model.Gender</p>
+                            </div>
+                        </div>
+                    </div>                        
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Photo1))
+                    {
+                    <div class="item">
+                        <div class="dummy"></div>
+                        <div class="dog">
+                            <img class="img-responsive" alt="" src="@Model.Photo2">
+                            <div class="carousel-caption">
+                                <p>@Model.Name - @Model.Age @Model.Gender</p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Photo1))
+                    {
+                    <div class="item">
+                        <div class="dummy"></div>
+                        <div class="dog">
+                            <img class="img-responsive" alt="" src="@Model.Photo3">
+                            <div class="carousel-caption">
+                                <p>@Model.Name - @Model.Age @Model.Gender</p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <div class="carousel-arrow">
+                    <a data-slide="prev" href="#myCarousel" class="left carousel-control">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a data-slide="next" href="#myCarousel" class="right carousel-control">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Carousel -->
+        <!-- Content Info -->
+        <div class="col-md-5">
+            <div class="headline"><h2>@Model.Name - @Model.Age @Model.Gender</h2></div>
+            <div class="margin-bottom-20">@Html.Raw(Model.Story)</div>
+            <a href="~/Applications/Adoption" class="btn-u btn-u-large"><i class="fa fa-list-alt"></i>&nbsp; ADOPT @Model.Name.ToUpper()</a>
+        </div>
+        <!-- End Content Info -->
+    </div><!--/row-->
+
+
+    <div class="margin-bottom-20 clearfix"></div>
+
+</div><!--/container-->
+<!--=== End Content Part ===-->
