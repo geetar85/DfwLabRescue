@@ -5,7 +5,9 @@
 
 @section Css {
     <!-- CSS Pages Style -->
-    <link rel="stylesheet" href="@Model.CssFile">
+    @if (!string.IsNullOrEmpty(Model.CssFile)) { 
+        <link rel="stylesheet" href="@Model.CssFile">
+    }
 }
 
 @if (Model.Breadcrumbs)

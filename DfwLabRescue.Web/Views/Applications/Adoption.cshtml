@@ -29,26 +29,31 @@
             </p>
             <p>
                 <strong>
-                    You MUST read "What is a Labrador Retriever" before completing this application.
-                </strong>
-            </p>
-            <p>
-                <strong>
                     PLEASE NOTE DFWLRC RESCUE RESERVES THE RIGHT TO REFUSE OR DENY ANY APPLICATION.
                 </strong>
             </p>
             <form action="~/applications/adoption" method="post" enctype="multipart/form-data" class="sky-form">
                 <fieldset>
                     <div class="row">
-                        <section class="col col-8">
-                            <label>1. Please provide the following contact information:</label>
-                            <label class="input">
-                                <i class="icon-append fa fa-barcode"></i>
-                                <input type="text" name="paypal" placeholder="PayPal Confirmation #" />
-                            </label>
+                        <section class="col col-11">
+                            <label>Before you begin, please complete the $25.00 donation to PayPal and fill in your confirmation #.</label>
                         </section>
                     </div>
                     <div class="row">
+                        <section class="col col-8">
+                                <label class="input">
+                                    <i class="icon-append fa fa-barcode"></i>
+                                    <input type="text" name="paypal" placeholder="PayPal Confirmation #" />
+                                </label>
+                        </section>
+                        <section class="col col-3">
+                            <a href="#" class="btn-u"><i class="glyphicon glyphicon-usd"></i> Proceed to PayPal</a>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-11">
+                            <label>1. Please provide the following contact information:</label>
+                        </section>
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-user"></i>
@@ -343,7 +348,7 @@
                     <section class="col col-6">
                         <label class="textarea">
                             <i class="icon-append fa fa-question-circle"></i>
-                            <textarea rows="3" name="homeduringday" placeholder="Is anyone home during the day?  If so, whom?" ></textarea>
+                            <textarea rows="3" name="homeduringday" placeholder="Is anyone home during the day?  If so, whom?"></textarea>
                         </label>
                     </section>
                     <section class="col col-6">

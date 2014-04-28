@@ -13,8 +13,23 @@ namespace DfwLabRescue.Web.Models
             contentList.Add(BuildVolunteerPage());
             contentList.Add(BuildFosterPage());
             contentList.Add(BuildDonationPage());
+            contentList.Add(BuildApplicationTermsPage());
+            contentList.AddRange(BuildMiscPages());
 
             return contentList;
+        }
+
+        private IEnumerable<Content> BuildMiscPages()
+        {
+            return new List<Content> {
+                new Content {ContentId = "InMemoriam", Title = "In Memoriam", Breadcrumbs = true},
+                new Content {ContentId = "SpecialNeeds", Title = "Amazing Dogs with Special Needs", Breadcrumbs = true},
+                new Content {ContentId = "ThinkBeforeAdopting", Title= "Think Before Adopting", Breadcrumbs = true},
+                new Content {ContentId = "Stories", Title = "Success Stories", Breadcrumbs = true},
+                new Content {ContentId = "VetInfo", Title = "Veterinary Information", Breadcrumbs = true},
+                new Content {ContentId = "FAQ", Title = "Frequently Asked Questions", Breadcrumbs = true},
+                new Content {ContentId = "HelpfulLinks", Title = "Helpful Links", Breadcrumbs = true},
+            };
         }
 
         private Content BuildVolunteerPage()
@@ -169,9 +184,9 @@ We have some of the best volunteers around! Still, we struggle to meet the deman
     <div class=""one-page"">
         <div class=""one-page-inner one-default"">
             <div class=""container"">
-                <h1>What Types of Animals Need Foster Care?</h1>
                 <div class=""row"">
                     <div class=""col-md-6"">
+                <h1>What Types of Animals Need Foster Care?</h1>
                         <p>They arrive by the dozens every day: helpless Labs, who are sick, injured or abused...puppies who are too young up for adoption, great Labs that no one had time for pets whose families are in crisis, all surrendered to shelters in the DFW Metroplex!
 
 To get the second chance they deserve, these Labs desperately need foster care.</p>
@@ -180,26 +195,18 @@ If you love and care about Labs and want to help them enjoy the lives they deser
 
 You may be asked to give a few days or weeks of your time to the dog who benefits, it means a lifetime.</p>
 <p>""We need caring people to become foster care providers and help us save the lives of hundreds of Labs every year,"" said Director of Incoming Marisha Teagardin. ""The number of Labs needing rescue every day, every week, every month, and every year is staggering. We need people in our community to provide these Labs with temporary respite until they can be placed up for adoption and find their forever home.""</p>
-                        <a class=""btn-u btn-u-green one-page-btn""><i class=""fa fa-bolt""></i> libero adipiscing</a>
-                    </div>
-                    <div class=""col-md-6"">
-                        <img src=""/assets/img/new/img5.jpg"" class=""img-responsive margin-bottom-10"" alt="""">
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class=""one-page-inner one-blue"">
-            <div class=""container"">
-                <h1>At vero eos et accusamus et iusto odio dignissimos</h1>
-                <div class=""row"">
-                    <div class=""col-md-6"">
-                        <img src=""/assets/img/new/img1.jpg"" class=""margin-bottom-10 img-responsive"" alt="""">
+                        <p>By providing temporary foster care to a Lab in need, you're helping to ensure a bright future. Without foster care, many Labs 
+will not survive. There are little or no out-of-pocket costs to providing foster care, and you don't have to be an 'expert' about animals. 
+DFWLRRC provides medication and veterinary care, foster training and support, and a fabulous ""Meet-N-Greet"" program. As a foster-care provider, 
+you're asked to give love, food, care and time in a safe and nurturing environment. Each case is different. The length of time a Lab will spend in foster 
+care depends upon that animal's age, and condition. The success of our organization is directly affected by the number of foster homes we have available. 
+Fosters are essential in providing a loving environment for our rescued Labs, in order to assess their personalities and place them in forever homes. 
+The more active foster homes we have on our roster, the more Labs we can give a new leash on life!</p>
+                        <p>In ALL cases, you're giving a Lab the second chance he deserves.</p>
                     </div>
                     <div class=""col-md-6"">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus..</p>
-                        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
-                        <a class=""btn-u btn-u-red one-page-btn""><i class=""fa fa-bell""></i> libero adipiscing</a>
+                        <img src=""/assets/img/dogs/weneedfosters_mammapups_full.jpg"" class=""img-responsive margin-bottom-10"" alt="""">
                     </div>
                 </div>
             </div>
@@ -207,114 +214,61 @@ You may be asked to give a few days or weeks of your time to the dog who benefit
 
         <div class=""one-page-inner one-grey"">
             <div class=""container"">
-                <h1>Molestias excepturi sint occaecati cupiditate</h1>
+                <div class=""row"">
+                    <div class=""col-md-6"">
+                <h1>Young or newborn puppies and pregnant females.</h1>
+                        <p>With ""breeding season"" upon us, we need foster-care providers for Labs about to give birth to new litters of babies, 
+as well as young and newborn puppies who are not old enough to go up for adoption. Some puppies, or litters, may require short-term bottle feeding;
+most of these youngsters simply need a safe, secure home in which to ""grow up"" until they reach 8 weeks of age and a minimum of 10lbs.</p>
+
+<p>Between May and September, shelters in the DFW Metroplex take in more than 3,000 unwanted puppies per month, many of them Labs! Many are too young and 
+too small to go up for adoption and are euthanized, or fall ill and do not survive. But if given time to ""grow up"" in foster care, they can be spayed or 
+neutered and placed up for adoption and get the chance to live a long, happy life.</p>
+
+                    </div>
+                    <div class=""col-md-6"">
+                        <img src=""/assets/img/dogs/weneedfosters_shelter.jpg"" class=""img-responsive"" alt="""">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=""one-page-inner one-grey"">
+            <div class=""container"">
+                <h1>Sick, injured or abused animals.</h1>
                 <div class=""row margin-bottom-40"">
                     <div class=""col-md-6"">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus..</p>
-                        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
-                        <a class=""btn-u btn-u-blue one-page-btn""><i class=""fa fa-bullhorn""></i> libero adipiscing</a>
+                        <img src=""/assets/img/dogs/weneedfosters_injured.jpg"" class=""img-responsive"" alt="""">
                     </div>
                     <div class=""col-md-6"">
-                        <img src=""/assets/img/new/img7.jpg"" class=""img-responsive"" alt="""">
-                    </div>
-                </div>
-                <div class=""row"">
-                    <div class=""col-md-6"">
-                        <img src=""/assets/img/new/img6.jpg"" class=""margin-bottom-20 img-responsive"" alt="""">
-                    </div>
-                    <div class=""col-md-6"">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus..</p>
-                        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
-                        <a class=""btn-u btn-u-orange one-page-btn""><i class=""fa fa-briefcase""></i> libero adipiscing</a>
+                        <p>Imagine having a very bad cold, a broken leg, a serious burn or other treatable medical condition, but no one to help or no place 
+to go while you recovered. That is the fate of thousands of Labs who arrive at area shelters each year. Without a secure place to stay temporarily, and someone
+to feed them and care for them (and in some cases, administer medication or change bandages) these Labs may not survive. Our Rescue vets work hard to give each
+dog the same loving care you would want your pets to have, but there is a limit to how long they can house our injured Labs. New patients arrive every day; 
+for them to receive the immediate, lifesaving care they need, we must move other recovering patients to another safe and nurturing location such as a temporary
+foster-care home.</p>
+
+<p>You don't have to be a veterinarian to care for a sick, injured or abused Lab. You simply need to provide tender, loving care under the direction of our 
+Rescue Veterinarians and Vet Liaisons. It's important to note that we will never place a Lab patient with a foster-care provider who is not willing or able 
+to provide the necessary level of care.</p>
+
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class=""one-page-inner one-red"">
-            <div class=""container"">
-                <h1>At vero eos et accusamus et iusto odio dignissimos</h1>
-                <div class=""row"">
-                    <div class=""col-md-6"">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus..</p>
-                        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
-                        <a class=""btn-u btn-u-green one-page-btn""><i class=""fa fa-comments-o""></i> libero adipiscing</a>
-                    </div>
-                    <div class=""col-md-6"">
-                        <img src=""/assets/img/new/img10.jpg"" class=""img-responsive margin-bottom-10"" alt="""">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class=""one-page-inner one-default"">
-            <div class=""container"">
-                <h1>At vero eos et accusamus et iusto odio dignissimos</h1>
-                <div class=""row"">
-                    <div class=""col-md-6"">
-                        <img src=""/assets/img/main/8.jpg"" class=""img-responsive margin-bottom-10"" alt="""">
-                    </div>
-                    <div class=""col-md-6"">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus..</p>
-                        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
-                        <div class=""row margin-bottom-20"">
-                            <div class=""col-md-3"">
-                                <a href=""/assets/img/main/1.jpg"" title=""Project #2"" data-rel=""fancybox-button"" class=""thumbnail fancybox-button zoomer"">
-                                    <span class=""overlay-zoom"">  
-                                        <img class=""img-responsive"" src=""/assets/img/main/1.jpg"" alt="""" />
-                                        <div class=""zoom-icon""></div>                   
-                                    </span>                                              
-                                </a>
-                            </div>
-                            <div class=""col-md-3"">
-                                <a href=""/assets/img/main/2.jpg"" title=""Project #2"" data-rel=""fancybox-button"" class=""thumbnail fancybox-button zoomer"">
-                                    <span class=""overlay-zoom"">  
-                                        <img class=""img-responsive"" src=""/assets/img/main/2.jpg"" alt="""" />
-                                        <div class=""zoom-icon""></div>                   
-                                    </span>                                              
-                                </a>                                                                                    
-                            </div>
-                            <div class=""col-md-3"">
-                                <a href=""/assets/img/main/3.jpg"" title=""Project #2"" data-rel=""fancybox-button"" class=""thumbnail fancybox-button zoomer"">
-                                    <span class=""overlay-zoom"">  
-                                        <img class=""img-responsive"" src=""/assets/img/main/3.jpg"" alt="""" />
-                                        <div class=""zoom-icon""></div>                   
-                                    </span>                                              
-                                </a>                                                                                    
-                            </div>
-                            <div class=""col-md-3"">
-                                <a href=""/assets/img/main/4.jpg"" title=""Project #2"" data-rel=""fancybox-button"" class=""thumbnail fancybox-button zoomer"">
-                                    <span class=""overlay-zoom"">  
-                                        <img class=""img-responsive"" src=""/assets/img/main/4.jpg"" alt="""" />
-                                        <div class=""zoom-icon""></div>                   
-                                    </span>                                              
-                                </a>                                                                                    
-                            </div>
-                        </div>
-                        <a class=""btn-u btn-u-red one-page-btn""><i class=""fa fa-thumbs-up""></i> libero adipiscing</a>
-                    </div>
-                </div>
-                <hr>
-                <div class=""row"">
-                   <div class=""col-md-3"">
-                      <h3 class=""heading-sm""><a href=""#"">Consectetur adipiscing</a></h3>
-                      <p>Pellentesque viverra vehicula sem ut volutpat dosum molor sit amet, consectetur adipiscing elit</p>
-                   </div>
-                   <div class=""col-md-3"">
-                      <h3 class=""heading-sm""><a href=""#"">Ut volutpat dosum</a></h3>
-                      <p>Lunt in lpa qui officia deserunt mollitia mo animi, asmid leoff iscia est labor le harum quidem rerum facilis</p>
-                   </div>
-                   <div class=""col-md-3"">
-                      <h3 class=""heading-sm""><a href=""#"">Viverra de esque</a></h3>
-                      <p>Volutpat dosum esque viverra ved et quam lacusehicula sem ut  molorviverra sit amet, consetetur edipiscin la</p>
-                   </div>
-                   <div class=""col-md-3"">
-                      <h3 class=""heading-sm""><a href=""#"">Sem ut volutpat dum</a></h3>
-                      <p>Deleniti atque corrupa vehicula sem ut volutpat dosum molor sit amet, consectetur adipiscing praesentium</p>
-                   </div>
+   <div class=""purchase"">
+        <div class=""container"">
+            <div class=""row"">
+                <div class=""col-md-9 animated fadeInLeft"">
+                    <span>Take the next Step! Please don't delay...Labs in need are waiting for you! Give a Lab a New Leash on Life!</span>
+					
                 </div>            
+                <div class=""col-md-3 btn-buy animated fadeInRight"">
+                    <a href=""#"" class=""btn-u btn-u-lg""><i class=""fa fa-cloud-download""></i> Apply to Foster Now</a>
+                </div>
             </div>
-        </div>    
+        </div>
+    </div>
     </div><!--/one-page-->
     <!-- End Content Part -->"
             };
@@ -432,11 +386,74 @@ You may be asked to give a few days or weeks of your time to the dog who benefit
         {
             return new Content
             {
-                ContentId = "AdoptionTerms",
-                Title = "Adoption Terms",
+                ContentId = "AdoptionProcess",
+                Title = "Adoption Application Process",
                 Breadcrumbs = true,
                 CssFile = "/assets/css/pages/page_pricing.css",
-                RawHtml = @""
+                RawHtml = @"
+    <!--=== Content Part ===-->
+    <div class=""container content"">		
+    	<div class=""row-fluid privacy"">
+            <div id=""main_inner"">
+
+<h2>The Process...</h2>
+
+<h4>Overview of the DFWLRRC adoption process:</h4>
+
+<ul>
+	<li>A potential adopter completes the adoption application.</li>
+	<li>DFWLRRC has the right to deny or refuse any application.&nbsp;</li>
+	<li>If approved, the applicant is scheduled for a home study. The potential adopter is also added to our Meet n Greet invite list.&nbsp;</li>
+	<li>If approved, the potential adopter is contacted by the Director of Adoptions with a list of foster dogs and how to contact their foster home. The potential adopter may also continue to attend the Meet n Greets.&nbsp;</li>
+	<li>The potential adopter and foster home coordinate a time for the family to meet the dog, and if necessary, meet the existing family animals.</li>
+	<li>Once a match is found, the adoption process is completed when the family completes the adoption contract, pays the adoption fee, and has secured the necessary items for the new family pet (leash, ID tag, crate, etc.)</li>
+</ul>
+
+<h4>Adoption Fees (Effective April 1, 2012):</h4>
+
+<ul>
+	<li>$350 for puppies (any dog under 6 months old when entering program)</li>
+	<li>$275 for adults ($250 for adoptions completed prior to April 1st)</li>
+</ul>
+
+<p>On average, it takes between one and five months to adopt a Rescue Lab, depending on your personal circumstances and flexibility.
+The adoption fees help us meet the boarding and veterinary expenses incurred by our non-profit organization, although our average expense per Lab is greater than the adoption donation.
+Remember, DFWLRRC has the right to deny or refuse any application.</p>
+
+<h4>Overview of the DFWLRRC rescue process:</h4>
+
+<ul>
+	<li>Once accepted into the program, but before he/she goes into a foster home, all new Labs get a trip to our veterinarian for complete checkups, required immunizations, heart worm tests/treatments, spaying or neutering (if necessary), and any medications prescribed by our vet.</li>
+	<li>Once in a foster home, the rescue Lab is introduced to a warm, loving, safe environment. He/she will be crate trained, receive basic obedience training, and complete any necessary follow-up care prescribed by our vets. Our rescue Labs are treated like members of the family and receive all the spoils a Lab deserves.&nbsp;&nbsp;</li>
+</ul>
+
+<h4>Characteristics of a Forever Home:&nbsp;</h4>
+
+<ul>
+	<li>The dog will not be kept outdoors during the adopter's working hours, or at any other time left alone outdoors while the adopter is not at home. The dog may be confined to a room such as a bedroom or basement, or any other room of adequate size, and protected from the elements of weather</li>
+	<li>Yard is securely fenced (Adoptions to apartment dwellers depend on the dog requested).</li>
+	<li>Forever home is in the DFW area.&nbsp;</li>
+	<li>No children under the age of 6, unless they have been raised with large dogs.</li>
+	<li>Has an adult who wants to train and care for the dog&nbsp;</li>
+	<li>Existing and recent pets must be spayed/neutered, on heartworm preventative, and current on all recommended vaccinations. (Please specify if there is a medical reason any of these conditions are not met)</li>
+</ul>
+</div>
+        </div><!--/row-fluid-->        
+    </div><!--/container-->		
+    <!--=== End Content Part ===-->
+	<div class=""purchase"">
+        <div class=""container"">
+            <div class=""row"">
+                <div class=""col-md-8 animated fadeInLeft"">
+                    <span> DFWLRRC is requesting a $25.00 fee for all adoption applications submitted. Your application will not be processed until this fee is received. This fee is non-refundable; all fees go towards meeting the needs of rescued Labrador Retrievers in our program. If you agree to all of the above, please fill out an adoption application today!</span>
+					
+                </div>            
+                <div class=""col-md-4 btn-buy animated fadeInRight"">
+                    <a href=""/Applications/Adoption"" class=""btn-u btn-u-lg""><i class=""fa fa-cloud-download""></i>Fill out Application</a>
+                </div>
+            </div>
+        </div>
+    </div>"
             };
         }
     }
