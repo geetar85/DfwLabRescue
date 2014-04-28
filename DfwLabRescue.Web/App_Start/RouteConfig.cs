@@ -15,6 +15,12 @@ namespace DfwLabRescue.Web
             
             routes.MapMvcAttributeRoutes();
 
+            routes.MapRoute(
+                name: "CatchAll",
+                url: "{*url}",
+                defaults: new { controller = "Error", action = "NotFound" }
+            );
+
             //routes.MapRoute(
             //    name: "Default",
             //    url: "{action}/{id}",
