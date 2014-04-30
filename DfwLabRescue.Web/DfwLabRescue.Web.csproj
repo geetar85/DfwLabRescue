@@ -480,6 +480,7 @@
     <Content Include="assets\img\up.png" />
     <Content Include="assets\img\user.jpg" />
     <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\forms\baseForm.js" />
     <Content Include="assets\js\forms\checkout.js" />
     <Content Include="assets\js\forms\comment.js" />
     <Content Include="assets\js\forms\contact.js" />

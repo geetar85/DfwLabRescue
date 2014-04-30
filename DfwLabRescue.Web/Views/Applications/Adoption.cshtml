@@ -43,7 +43,7 @@
                         <section class="col col-8">
                                 <label class="input">
                                     <i class="icon-append fa fa-barcode"></i>
-                                    <input type="text" name="paypal" placeholder="PayPal Confirmation #" />
+                                    <input type="text" name="paypal" placeholder="PayPal Confirmation #" required />
                                 </label>
                         </section>
                         <section class="col col-3">
@@ -57,36 +57,36 @@
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-user"></i>
-                                <input type="text" name="name" placeholder="Name">
+                                <input type="text" name="name" placeholder="Name" required>
                             </label>
                         </section>
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-envelope"></i>
-                                <input type="email" name="email" placeholder="E-mail">
+                                <input type="email" name="email" placeholder="E-mail" required>
                             </label>
                         </section>
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-phone"></i>
-                                <input type="tel" name="phone" placeholder="Phone">
+                                <input type="tel" name="phone" placeholder="Phone" required class="phone">
                             </label>
                         </section>
                     </div>
                     <div class="row">
-                        <section class="col col-11">
-                            <label>We place dogs specifically in the Dallas-Fort Worth area. If you are out of our area, please check our Informational Links page to locate rescue groups in other parts of the state or country.</label>
+                        <section class="col col-12">
+                            <div class="alert alert-warning"><strong>Please note:</strong> We place dogs specifically in the Dallas-Fort Worth area. If you are out of our area, please check our <a href="~/Content/HelpfulLinks">Informational Links</a> page to locate rescue groups in other parts of the state or country.</div>
                         </section>
                         <section class="col col-6">
                             <label class="input">
                                 <i class="icon-append fa fa-book"></i>
-                                <input type="text" name="name" placeholder="Street Address">
+                                <input type="text" name="address" placeholder="Street Address" required>
                             </label>
                         </section>
                         <section class="col col-6">
                             <label class="input">
                                 <i class="icon-append fa fa-book"></i>
-                                <input type="email" name="email" placeholder="Address (Cont.)">
+                                <input type="text" name="address2" placeholder="Address (Cont.)">
                             </label>
                         </section>
                     </div>
@@ -94,19 +94,19 @@
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-book"></i>
-                                <input type="text" name="name" placeholder="City">
+                                <input type="text" name="city" placeholder="City" required>
                             </label>
                         </section>
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-book"></i>
-                                <input type="email" name="email" placeholder="State" disabled value="Texas">
+                                <input type="email" name="state" placeholder="State" disabled value="Texas">
                             </label>
                         </section>
                         <section class="col col-4">
                             <label class="input">
                                 <i class="icon-append fa fa-book"></i>
-                                <input type="email" name="email" placeholder="Zipcode">
+                                <input type="text" name="zipcode" placeholder="Zipcode" required class="zipcode">
                             </label>
                         </section>
                     </div>
@@ -389,7 +389,7 @@
                 </footer>
                 <div class="message">
                     <i class="rounded-x fa fa-check"></i>
-                    <p>Thanks for your order!<br>We'll contact you very soon.</p>
+                    <p>Thanks for submitting your application!<br>We'll contact you very soon.</p>
                 </div>
             </form>
         </div>
