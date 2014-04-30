@@ -32,6 +32,7 @@ namespace DfwLabRescue.Web.Models
             }
         }
 
+        public DateTime? AdoptionDate { get; set; }
                
         public string Summary { get; set; }
         public string Story { get; set; }

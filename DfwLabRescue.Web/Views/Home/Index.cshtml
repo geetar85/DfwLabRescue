@@ -11,13 +11,15 @@
 <div class="slider-inner">
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
-            <h2><i>Be a Hero</i><br /><i>Save a Lab Today</i></h2>
+            <h2><i>Be a Hero - Save a Lab</i><br/><i><span class="counter">@ViewBag.AdoptedCount</span> Labs Adopted in @DateTime.Now.Year</i></h2>
             <p class="hero-paragraph">
                 <i>Even Labrador Retrievers, America's most popular dogs,</i><br /><i> need a little help sometimes. Partner with the DFW Labrador </i><br /><i>Retriever Rescue Club and be a hero to a deserving Lab </i>
                 <br /><i>by volunteering, fostering or adopting. Make a difference</i>
                 <br /><i> in a Lab's life and watch them change yours.</i>
             </p>
-            <div class="da-img hero-heading"><img src="/assets/img/hero.png" alt="" /></div>
+            <div class="da-img hero-heading">
+                <img src="/assets/img/hero.png" alt="" />
+            </div>
         </div>
         <div class="da-slide">
             <h2><i>Be a Lifeline</i><br /><i>For every lab</i><br /><i>How can you help?</i></h2>
@@ -88,30 +90,28 @@
         </div>
     </div>
     <!-- End Highlights Blokcs -->
-
     <!-- Dogs -->
     <div class="headline"><h2>Dogs Available for Adoption</h2></div>
     <div class="row margin-bottom-20">
         @foreach (DfwLabRescue.Web.Models.Dog dog in (IEnumerable<DfwLabRescue.Web.Models.Dog>)ViewBag.AvailableDogs)
-        {            
-        <div class="col-md-3 col-sm-6">
-            <div class="thumbnails thumbnail-style thumbnail-kenburn">
-                <div class="thumbnail-img">
-                    <div class="overflow-hidden">
-                        <img class="img-responsive" src="@dog.Photo1" alt="" />
+        {
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                    <div class="thumbnail-img">
+                        <div class="overflow-hidden">
+                            <img class="img-responsive" src="@dog.Photo1" alt="" />
+                        </div>
+                        <a class="btn-more hover-effect" href="@Url.Action("Dog", "Dogs", new {id = @dog.Id, name = @dog.Name})">read more +</a>
                     </div>
-                    <a class="btn-more hover-effect" href="@Url.Action("Dog", "Dogs", new {id = @dog.Id, name = @dog.Name})">read more +</a>
-                </div>
-                <div class="caption">
-                    <h3><a class="hover-effect" href="#"><strong>@dog.Name</strong> - <i>@dog.Age @dog.Gender</i> </a></h3>
-                    <p>@dog.Summary</p>
+                    <div class="caption">
+                        <h3><a class="hover-effect" href="#"><strong>@dog.Name</strong> - <i>@dog.Age @dog.Gender</i> </a></h3>
+                        <p>@dog.Summary</p>
+                    </div>
                 </div>
             </div>
-        </div>
         }
     </div>
     <!-- End Dogs -->
-
     <!-- Our Clients -->
     <div id="clients-flexslider" class="flexslider home clients">
         <div class="headline"><h2>Our Partners &amp; Sponsors</h2></div>
@@ -224,8 +224,10 @@
 </div><!--/container-->
 <!-- End Content Part -->
 @section pluginJavaScript {
-    <script type="text/javascript" src="/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/counter/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/counter/jquery.counterup.min.js"></script>
 }
 
 @section pageJavaScript {
@@ -235,6 +237,7 @@
             App.init();
             App.initSliders();
             Index.initParallaxSlider();
+            App.initCounter();
         });
     </script>
 }
