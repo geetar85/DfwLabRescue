@@ -113,7 +113,7 @@
     </div>
     <!-- End Dogs -->
 
-    <div class="owl-carousel-v1">
+    <div class="owl-carousel-v1 hidden">
         <div class="headline"><h2>DFW Lab Rescue Store</h2></div>        
         <p>Help support our labs and look good while doing it! To see a listing of all products, <a target="_blank" href="http://www.cafepress.com/dfwlrrc">Click Here!</a></p>
 
@@ -165,7 +165,7 @@
             $('.owl-carousel-v1').hide();
             setTimeout(function () {
                 OwlCarousel.initOwlCarousel();
-                $('.owl-carousel-v1').fadeIn();
+                $('.owl-carousel-v1').removeClass('hidden').fadeIn();
             }, 500);
         });
     </script>
