@@ -3,15 +3,16 @@
 }
 
 @section Css {
-    <link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css">
-    <link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/parallax-slider/css/parallax-slider.css">
+    <link rel="stylesheet" href="~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
 }
 
 <!--=== Slider ===-->
 <div class="slider-inner">
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
-            <h2><i>Be a Hero - Save a Lab</i><br/><i><span class="counter">@ViewBag.AdoptedCount</span> Labs Adopted in @DateTime.Now.Year</i></h2>
+            <h2><i>Be a Hero - Save a Lab</i><br /><i><span class="counter">@ViewBag.AdoptedCount</span> Labs Adopted in @DateTime.Now.Year</i></h2>
             <p class="hero-paragraph">
                 <i>Even Labrador Retrievers, America's most popular dogs,</i><br /><i> need a little help sometimes. Partner with the DFW Labrador </i><br /><i>Retriever Rescue Club and be a hero to a deserving Lab </i>
                 <br /><i>by volunteering, fostering or adopting. Make a difference</i>
@@ -83,8 +84,7 @@
             <div class="service">
                 <i class="fa fa-globe service-icon"></i>
                 <div class="desc">
-                    <a href="#"><h4>Volunteer</h4></a>
-                    <p>Look into the eyes of any of the rescues and you will see their eternal gratitude for that second chance at life...the second chance our volunteers gave to them. They are so thankful a volunteer listened to that inner voice that nudged them into signing up to do that home study, showing up to that meet n greet to talk with potential adopters or opening up their home to foster that Lab in need. Yes, each and every one of our volunteers makes a difference -- no matter what the contribution.</p>
+                    <a href="#"><h4>Shop</h4></a>
                 </div>
             </div>
         </div>
@@ -112,114 +112,37 @@
         }
     </div>
     <!-- End Dogs -->
+
+    <div class="owl-carousel-v1">
+        <div class="headline"><h2>DFW Lab Rescue Store</h2></div>        
+        <p>Help support our labs and look good while doing it! To see a listing of all products, <a target="_blank" href="http://www.cafepress.com/dfwlrrc">Click Here!</a></p>
+
+        <div class="owl-navigation">
+            <div class="customNavigation">
+                <a class="owl-btn prev-v1"><i class="fa fa-angle-left"></i></a>
+                <a class="owl-btn next-v1"><i class="fa fa-angle-right"></i></a>
+            </div>
+        </div><!--/navigation-->
+
+        <div class="owl-slider" ng-controller="StoreCtrl">
+            <div ng-repeat="product in products" class="item">
+                <a href="{{product.linkurl}}" target="_blank">
+                    <img class="img-responsive" src="{{product.imageurl}}" alt="">
+                </a>
+                <h2>{{product.caption}}</h2>
+            </div>
+        </div>
+    </div>
+
     <!-- Our Clients -->
-    <div id="clients-flexslider" class="flexslider home clients">
-        <div class="headline"><h2>Our Partners &amp; Sponsors</h2></div>
-        <ul class="slides">
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/hp_grey.png" alt="" />
-                    <img src="/assets/img/clients/hp.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/igneus_grey.png" alt="" />
-                    <img src="/assets/img/clients/igneus.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/vadafone_grey.png" alt="" />
-                    <img src="/assets/img/clients/vadafone.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/walmart_grey.png" alt="" />
-                    <img src="/assets/img/clients/walmart.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/shell_grey.png" alt="" />
-                    <img src="/assets/img/clients/shell.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/natural_grey.png" alt="" />
-                    <img src="/assets/img/clients/natural.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/aztec_grey.png" alt="" />
-                    <img src="/assets/img/clients/aztec.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/gamescast_grey.png" alt="" />
-                    <img src="/assets/img/clients/gamescast.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/cisco_grey.png" alt="" />
-                    <img src="/assets/img/clients/cisco.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/everyday_grey.png" alt="" />
-                    <img src="/assets/img/clients/everyday.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/cocacola_grey.png" alt="" />
-                    <img src="/assets/img/clients/cocacola.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/spinworkx_grey.png" alt="" />
-                    <img src="/assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/shell_grey.png" alt="" />
-                    <img src="/assets/img/clients/shell.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/natural_grey.png" alt="" />
-                    <img src="/assets/img/clients/natural.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/gamescast_grey.png" alt="" />
-                    <img src="/assets/img/clients/gamescast.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/everyday_grey.png" alt="" />
-                    <img src="/assets/img/clients/everyday.png" class="color-img" alt="" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/assets/img/clients/spinworkx_grey.png" alt="" />
-                    <img src="/assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                </a>
-            </li>
-        </ul>
-    </div><!--/flexslider-->
+    @*<div id="clients-flexslider" class="flexslider home clients">
+            <div class="headline"><h2>DFW Lab Rescue Store!</h2></div>
+            <ul class="slides" ng-controller="StoreCtrl">
+                <li ng-repeat="product in products">
+                    <a href="#">{{product.caption}}</a>
+                </li>
+            </ul>
+        </div>*@<!--/flexslider-->
     <!-- End Our Clients -->
 </div><!--/container-->
 <!-- End Content Part -->
@@ -228,16 +151,22 @@
     <script type="text/javascript" src="~/assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
     <script type="text/javascript" src="~/assets/plugins/counter/waypoints.min.js"></script>
     <script type="text/javascript" src="~/assets/plugins/counter/jquery.counterup.min.js"></script>
+    <script src="~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
 }
 
 @section pageJavaScript {
     <script type="text/javascript" src="/assets/js/pages/index.js"></script>
+    <script type="text/javascript" src="~/assets/js/plugins/owl-carousel.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
             App.init();
-            App.initSliders();
             Index.initParallaxSlider();
             App.initCounter();
+            $('.owl-carousel-v1').hide();
+            setTimeout(function () {
+                OwlCarousel.initOwlCarousel();
+                $('.owl-carousel-v1').fadeIn();
+            }, 500);
         });
     </script>
 }

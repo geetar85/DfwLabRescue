@@ -65,7 +65,8 @@ var OwlCarousel = function () {
 		                itemsTablet: [600,2], //2 items between 600 and 0;
 		                itemsMobile : [479,1] //1 itemsMobile disabled - inherit from itemsTablet option
 		            });
-		    });
+		        });
+
 		}
     };
     

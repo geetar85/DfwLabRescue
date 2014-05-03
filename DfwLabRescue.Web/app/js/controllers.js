@@ -19,3 +19,9 @@ dfwLabRescueApp.controller('AdminDogCtrl', function ($scope, $http) {
         $scope.dogs = data;
     });
 });
+
+dfwLabRescueApp.controller("StoreCtrl", function ($scope, $http) {
+    $http.jsonp('http://widgets.cafepress.com/search/show/dfwlrrc?type=shop&callback=JSON_CALLBACK').success(function (data) {
+        $scope.products = data.product;
+    })
+});
