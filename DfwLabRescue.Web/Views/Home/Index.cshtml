@@ -125,11 +125,12 @@
         </div><!--/navigation-->
 
         <div class="owl-slider" ng-controller="StoreCtrl">
-            <div ng-repeat="product in products" class="item">
+            <div ng-repeat="product in products" class="item center-block">
                 <a href="{{product.linkurl}}" target="_blank">
                     <img class="img-responsive" src="{{product.imageurl}}" alt="">
                 </a>
-                <h2>{{product.caption}}</h2>
+                <h5 class="text-center">{{product.caption}}</h5>
+                <h5 class="text-center margin-top-0"><em>${{product.price}}</em></h5>
             </div>
         </div>
     </div>
