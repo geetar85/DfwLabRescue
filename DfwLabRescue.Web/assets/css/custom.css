@@ -6,6 +6,22 @@
     top: 240px;
 }
 
+.dfwlr-header .navbar-header {
+    margin-top: 15px;
+}
+.dfwlr-header .navbar-toggle {
+    margin-top: 60px;
+}
+@media (min-width: 767px) {
+    .dfwlr-header .navbar-nav {
+        margin-top: 45px;
+    }
+    .dfwlr-header .navbar-default {
+        margin-top: -10px;
+    }
+}
+
+
 .footer {
     background: #1c426f;
 }

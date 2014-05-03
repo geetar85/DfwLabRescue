@@ -233,6 +233,8 @@
     <Content Include="assets\img\clients\walmart_grey.png" />
     <Content Include="assets\img\demo.jpg" />
     <Content Include="assets\img\dfwlr_logo.png" />
+    <Content Include="assets\img\dfwlr_logo_lg.png" />
+    <Content Include="assets\img\dfwlr_logo_long.png" />
     <Content Include="assets\img\dogs\Beau Face Evergreen.jpg" />
     <Content Include="assets\img\dogs\be_a_hero.jpeg" />
     <Content Include="assets\img\dogs\beau.jpg" />
@@ -282,6 +284,7 @@
     <Content Include="assets\img\dogs\Zack5.jpg" />
     <Content Include="assets\img\fa.jpg" />
     <Content Include="assets\img\hero.png" />
+    <Content Include="assets\img\hero_lg.png" />
     <Content Include="assets\img\icons\social\amazon.png" />
     <Content Include="assets\img\icons\social\behance.png" />
     <Content Include="assets\img\icons\social\blogger.png" />
