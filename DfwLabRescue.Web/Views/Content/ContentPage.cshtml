@@ -5,9 +5,12 @@
 
 @section Css {
     <!-- CSS Pages Style -->
-    @if (!string.IsNullOrEmpty(Model.CssFile)) { 
+    @if (!string.IsNullOrEmpty(Model.CssFile))
+    {
         <link rel="stylesheet" href="@Model.CssFile">
     }
+    <link href="~/Scripts/raptor/raptor.min.css" rel="stylesheet" />
+    <link href="~/Scripts/raptor/raptor-front-end.min.css" rel="stylesheet" />
 }
 
 @if (Model.Breadcrumbs)
@@ -24,14 +27,58 @@
     </div><!--/breadcrumbs-->
 }
 
-<div id="contentDiv">
+<div data-id="@Model.ContentId" class="raptor">
     @Html.Raw(Model.RawHtml)
 </div>
 
-@section pageJavaScript {
-    <script type="text/javascript">
-        $(function () {
+@section pluginJavaScript {
+    <script type="text/javascript" src="~/Scripts/raptor/raptor.min.js"></script>
+}
 
-        });
-    </script>
+@section pageJavaScript {
+    @if (User.Identity.IsAuthenticated)
+    {
+        <script type="text/javascript">
+            $(function () {
+                $('.raptor').raptor({
+                    plugins: {
+                        dock: {
+                            dockToElement: true
+                        },
+                        save: {
+                            plugin: 'saveJson'
+                        },
+                        saveJson: {
+                            url: '/api/Content',
+                            postName: 'raptorContent',
+                            id: function () {
+                                return this.raptor.getElement().data('id');
+                            }
+                        }
+                    },
+                    bind: {
+                        layoutShow: function () {
+                            if ($('.raptor-ui-upload-file').length == 0) {
+                                var insertImageEl = $('<input id="fileupload" type="file" name="files[]" data-url="/Content/upload" multiple class="raptor-ui-insert-file raptor-ui-upload-file ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" data-title="Upload file"><span class="ui-button-icon-primary ui-icon ui-icon-insert-file"></span><span class="ui-button-text"></span></div>');
+                                var $element = $('.raptor-ui-insert-file');
+                                $element.after(insertImageEl);
+                                //initFileUpload();
+                            }
+                        }
+                    }
+                });
+            });
+
+            //var initFileUpload = function () {
+            //    $('.raptor-ui-upload-file').fileupload({
+            //        dataType: 'json',
+            //        done: function (e, data) {
+            //            $.each(data.result.files, function (index, file) {
+            //                $('<p/>').text(file.name).appendTo(document.body);
+            //            });
+            //        }
+            //    });
+            //};
+        </script>
+    }
 }

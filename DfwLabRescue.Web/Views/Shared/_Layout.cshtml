@@ -17,12 +17,12 @@
     <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.min.css">
 
     @RenderSection("Css", false)
 
@@ -41,11 +41,22 @@
             <!-- Navbar -->
             <div class="container">
                 <div class="topbar">
+                    <div class="container">
                         <!-- Topbar Navigation -->
                         <ul class="loginbar pull-right">
-                            <li><a href="page_login.html">Login</a></li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="~/Auth/Login">Login</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="~/Admin/Dogs">Admin</a></li>
+                                <li class="topbar-devider"></li>
+                                <li><a href="~/Auth/Logout">Logout</a></li>
+                            }
                         </ul>
                         <!-- End Topbar Navigation -->
+                    </div>
                 </div>
                 <div class="navbar navbar-default" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -89,18 +100,21 @@
         <!--=== End Copyright ===-->
     </div><!--/wrapper-->
     <!-- JS Global Compulsory -->
-    <script type="text/javascript" src="/assets/plugins/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/Scripts/angular.js"></script>
-    <script type="text/javascript" src="/app/js/controllers.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular.js"></script>
+    <script type="text/javascript" src="~/app/js/controllers.js"></script>
     <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
-    <script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script>
-    <script type="text/javascript" src="/Scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/parallax-slider/js/modernizr.js"></script>
+    <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
     @RenderSection("pluginJavaScript", false)
     <!-- JS Page Level -->
-    <script type="text/javascript" src="/assets/js/app.js"></script>
+    <script type="text/javascript" src="~/assets/js/app.js"></script>
+    <script type="text/javascript">
+        //$.ajaxSetup({ contentType: 'application/json; charset=utf-8' });
+    </script>
     @RenderSection("pageJavaScript", false)
     <!--[if lt IE 9]>
         <script src="/assets/plugins/respond.js"></script>
