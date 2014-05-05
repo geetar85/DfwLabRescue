@@ -12,6 +12,7 @@ namespace DfwLabRescue.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("App_Data/uploads/{*pathInfo}");
             
             routes.MapMvcAttributeRoutes();
 

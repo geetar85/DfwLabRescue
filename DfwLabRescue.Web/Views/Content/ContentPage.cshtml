@@ -31,8 +31,33 @@
     @Html.Raw(Model.RawHtml)
 </div>
 
+
+<div class="modal fade image-upload-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top:300px;">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myLargeModalLabel">File Upload</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Upload Files</h3>
+                <input id="fileupload" type="file" name="files" data-url="@Url.Content("~/Content/upload")" multiple>
+                <h4>Uploaded Files</h4>
+                <p>After done uploading, copy and paste the URL below and use in the insert file dialog</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul id="uploaded-files" class="list-unstyled margin-bottom-20"></ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div>
+</div>
 @section pluginJavaScript {
     <script type="text/javascript" src="~/Scripts/raptor/raptor.min.js"></script>
+    <script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
+    <script src="~/Scripts/jQuery.FileUpload/jquery.iframe-transport.js"></script>
 }
 
 @section pageJavaScript {
@@ -42,6 +67,7 @@
             $(function () {
                 $('.raptor').raptor({
                     plugins: {
+                        draggable: false,
                         dock: {
                             dockToElement: true
                         },
@@ -59,26 +85,24 @@
                     bind: {
                         layoutShow: function () {
                             if ($('.raptor-ui-upload-file').length == 0) {
-                                var insertImageEl = $('<input id="fileupload" type="file" name="files[]" data-url="/Content/upload" multiple class="raptor-ui-insert-file raptor-ui-upload-file ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" data-title="Upload file"><span class="ui-button-icon-primary ui-icon ui-icon-insert-file"></span><span class="ui-button-text"></span></div>');
+                                var insertImageEl = $('<div data-toggle="modal" data-target=".image-upload-modal" class="raptor-ui-upload-file ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" data-title="Upload file"><span class="ui-button-icon-primary ui-icon ui-icon-circle-plus"></span><span class="ui-button-text"></span></div>');
                                 var $element = $('.raptor-ui-insert-file');
                                 $element.after(insertImageEl);
-                                //initFileUpload();
                             }
                         }
                     }
                 });
+
+                $('#fileupload').fileupload({
+                    dataType: 'json',
+                    done: function (e, data) {
+                        $.each(data.result.files, function (index, file) {
+                            $('<li><i class="fa fa-check color-green"></i> ' + file.url + '</li>').appendTo($('#uploaded-files'));
+                        });
+                    }
+                });
             });
 
-            //var initFileUpload = function () {
-            //    $('.raptor-ui-upload-file').fileupload({
-            //        dataType: 'json',
-            //        done: function (e, data) {
-            //            $.each(data.result.files, function (index, file) {
-            //                $('<p/>').text(file.name).appendTo(document.body);
-            //            });
-            //        }
-            //    });
-            //};
         </script>
     }
 }

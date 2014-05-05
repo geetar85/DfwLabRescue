@@ -34,5 +34,13 @@ namespace DfwLabRescue.Web.Controllers
 
             return View();
         }
+
+        [Route("Auth/Logout")]
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
 	}
 }
