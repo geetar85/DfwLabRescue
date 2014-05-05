@@ -22,40 +22,6 @@ namespace DfwLabRescue.Web.Controllers
             return View(content);
         }
 
-        [Route("Content/upload")]
-        [HttpPost]
-        public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
-        {
-            var fileResult = new FileResult();
-            foreach (var file in files)
-            {
-                if (file.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/assets/img/uploads"), fileName);
-                    file.SaveAs(path);
-                    fileResult.files.Add(new File { name = file.FileName, size = file.ContentLength, url = Url.Content("~/assets/img/uploads/" + fileName) });
-                }
-            }
-            return Json(fileResult);
-        }
-
 
 	}
-
-    public class FileResult
-    {
-        public FileResult()
-        {
-            files = new List<File>();
-        }
-        public List<File> files { get; set; }
-    }
-
-    public class File
-    {
-        public string name { get; set; }
-        public double size { get; set; }
-        public string url { get; set; }
-    }
 }

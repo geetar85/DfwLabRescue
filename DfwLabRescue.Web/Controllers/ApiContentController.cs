@@ -4,10 +4,13 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Helpers;
+using System.Web.Hosting;
 using System.Web.Http;
 
 namespace DfwLabRescue.Web.Controllers
@@ -39,6 +42,32 @@ namespace DfwLabRescue.Web.Controllers
             content.RawHtml = updatedContent;
             return Request.CreateResponse(HttpStatusCode.OK);
         }
+
+        [Route("api/imageupload")]
+        [HttpPost]
+        public async Task<FileResult> Upload()
+        {
+            if (!Request.Content.IsMimeMultipartContent())
+            {
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+            }
+
+            string root = System.Web.HttpContext.Current.Server.MapPath("~/assets/img/uploads/");
+            var provider = new CustomMultipartFormDataStreamProvider(root); 
+
+
+
+            var files = await Request.Content.ReadAsMultipartAsync(provider);
+            
+            var fileResult = new FileResult();
+            foreach (var file in files.FileData)
+            {
+                var uploadedFileInfo = new FileInfo(file.LocalFileName);
+                fileResult.files.Add(new File { name = uploadedFileInfo.Name, size = uploadedFileInfo.Length, url = Url.Content("~/assets/img/uploads/" + uploadedFileInfo.Name) });                
+            }
+            
+            return fileResult;
+        }
     }
     public class Bla
     {
@@ -49,5 +78,34 @@ namespace DfwLabRescue.Web.Controllers
     {
         public string Foster { get; set; }
         
+    }
+
+    public class FileResult
+    {
+        public FileResult()
+        {
+            files = new List<File>();
+        }
+        public List<File> files { get; set; }
+    }
+
+    public class File
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+        public long size { get; set; }
+    }
+
+    public class CustomMultipartFormDataStreamProvider : MultipartFormDataStreamProvider
+    {
+        public CustomMultipartFormDataStreamProvider(string path)
+            : base(path)
+        { }
+
+        public override string GetLocalFileName(System.Net.Http.Headers.HttpContentHeaders headers)
+        {
+            var name = !string.IsNullOrWhiteSpace(headers.ContentDisposition.FileName) ? headers.ContentDisposition.FileName : "NoName";
+            return name.Replace("\"", string.Empty); //this is here because Chrome submits files in quotation marks which get treated as part of the filename and get escaped
+        }
     }
 }

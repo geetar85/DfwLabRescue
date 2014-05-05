@@ -10,7 +10,9 @@ namespace DfwLabRescue.Web
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            //var trace = config.EnableSystemDiagnosticsTracing();
+            //trace.IsVerbose = true;
+            //trace.MinimumLevel = System.Web.Http.Tracing.TraceLevel.Debug;
             // Web API routes
             config.MapHttpAttributeRoutes();
 
