@@ -9,7 +9,6 @@
 @RenderBody()
 
 @section pluginJavaScript {
-    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery.validate.min.js"></script>
     <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery.maskedinput.min.js"></script>
     <script src="~/assets/plugins/sky-forms/version-2.0.1/js/jquery-ui.min.js"></script>
@@ -23,10 +22,6 @@
         jQuery(document).ready(function () {
             App.init();
             BaseForm.initBaseForm();
-
-            $('.ckeditor').each(function (el) {
-                CKEDITOR.replace(el, { toolbar: [[]] });
-            });
         });
     </script>
 }

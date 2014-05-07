@@ -11,6 +11,7 @@
     }
     <link href="~/Scripts/raptor/raptor.min.css" rel="stylesheet" />
     <link href="~/Scripts/raptor/raptor-front-end.min.css" rel="stylesheet" />
+    <link href="~/Content/jQuery.FileUpload/css/jquery.fileupload.css" rel="stylesheet" />
 }
 
 @if (Model.Breadcrumbs)
@@ -41,23 +42,22 @@
                 <h4 class="modal-title" id="myLargeModalLabel">File Upload</h4>
             </div>
             <div class="modal-body">
-                <h3>Upload Files</h3>
-                <input id="fileupload" type="file" name="files" data-url="@Url.Content("~/api/imageupload")" multiple>
-                <h4>Uploaded Files</h4>
-                <p>After done uploading, copy and paste the URL below and use in the insert file dialog</p>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul id="uploaded-files" class="list-unstyled margin-bottom-20"></ul>
-                    </div>
-                </div>
+                <p>Upload files to be used on content pages. Once a file has been uploaded, simply copy the relative url and use the Insert File button from the toolbar!</p>
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Add files...</span>
+                    <input id="fileupload" type="file" name="files" data-url="@Url.Content("~/api/imageupload")" multiple>
+                </span>
+                <hr />
+                <ul id="uploaded-files" class="list-unstyled margin-bottom-20"></ul>
             </div>
         </div><!-- /.modal-content -->
     </div>
 </div>
 @section pluginJavaScript {
     <script type="text/javascript" src="~/Scripts/raptor/raptor.min.js"></script>
-    <script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
     <script src="~/Scripts/jQuery.FileUpload/jquery.iframe-transport.js"></script>
+    <script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
 }
 
 @section pageJavaScript {
@@ -95,9 +95,22 @@
 
                 $('#fileupload').fileupload({
                     dataType: 'json',
+                    autoUpload: false,
+                    add: function (e, data) {
+                        data.context = $('<li/>').html('<h3>' + data.files[0].name + '</h3><div class="image-output"><div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">60% Complete</span></div></div></div>')
+                            .appendTo('#uploaded-files');
+                        data.submit();
+                    },
+                    progress: function (e, data) {
+                        var progress = parseInt(data.loaded / data.total * 100, 10);
+                        data.context.find('.progress-bar').css('width', progress + '%');
+                        $('')
+                    },
                     done: function (e, data) {
                         $.each(data.result.files, function (index, file) {
-                            $('<li><i class="fa fa-check color-green"></i> ' + file.url + '</li>').appendTo($('#uploaded-files'));
+                            setTimeout(function () {
+                                data.context.find('.image-output').html('<i class="fa fa-check color-green"></i> ' + file.url + '</li>');
+                            }, 2000);
                         });
                     }
                 });
