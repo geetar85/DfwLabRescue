@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DfwLabRescue.Web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -10,9 +11,7 @@ namespace DfwLabRescue.Web
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            //var trace = config.EnableSystemDiagnosticsTracing();
-            //trace.IsVerbose = true;
-            //trace.MinimumLevel = System.Web.Http.Tracing.TraceLevel.Debug;
+            config.Filters.Add(new ApiExceptionFilter());
             // Web API routes
             config.MapHttpAttributeRoutes();
 
