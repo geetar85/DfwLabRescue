@@ -63,7 +63,7 @@ namespace DfwLabRescue.Web.Controllers
             foreach (var file in files.FileData)
             {
                 var uploadedFileInfo = new FileInfo(file.LocalFileName);
-                fileResult.files.Add(new File { name = uploadedFileInfo.Name, size = uploadedFileInfo.Length, url = Url.Content("~/assets/img/uploads/" + uploadedFileInfo.Name) });                
+                fileResult.files.Add(new File { name = uploadedFileInfo.Name, size = uploadedFileInfo.Length, url = "/assets/img/uploads/" + uploadedFileInfo.Name });                
             }
             
             return fileResult;
