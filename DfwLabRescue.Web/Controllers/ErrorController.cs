@@ -8,18 +8,21 @@ namespace DfwLabRescue.Web.Controllers
 {
     public class ErrorController : BaseController
     {
+        [Route("Error")]
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Route("Error/NotFound")]
         [HttpGet]
         public ActionResult NotFound()
         {
             return View();
         }
 
+        [Route("Error/Forbidden")]
         [HttpGet]
         public ActionResult Forbidden()
         {

@@ -21,7 +21,7 @@ namespace DfwLabRescue.Web.Controllers
         [HttpGet]
         public HttpResponseMessage RetrieveContent(string contentId, bool published = true)
         {
-            var content = DB.AllContent.FirstOrDefault(c => c.ContentId == contentId && c.Published == published);
+            var content = DB.AllContent.FirstOrDefault(c => c.ContentId.ToLower() == contentId.ToLower());
 
             if (content == null)
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Content Not Found");
