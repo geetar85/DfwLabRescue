@@ -15,7 +15,6 @@ namespace DfwLabRescue.Web.Controllers
         [HttpGet]
         public ActionResult ContentPage(string contentId)
         {
-            throw new Exception();
             var content = DB.AllContent.FirstOrDefault(c => c.ContentId.ToLower() == contentId.ToLower());
             if (content == null)
                 return HttpNotFound();
