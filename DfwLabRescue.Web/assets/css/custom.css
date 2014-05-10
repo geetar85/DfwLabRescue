@@ -53,7 +53,7 @@
 	background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(255,255,255,1) 99%)
 }
 .pricing-light .pricing-footer h4 {
-	color: #ffffff;
+	color: #D8D8D8;
 	padding: 5px;
 	font-size: 92px;
 	text-shadow: none;
@@ -63,7 +63,7 @@
 	font-weight: bold;
 	background: #007E99;
 	font-family: 'lato';
-	text-shadow: 3px 3px 0 #00647A;
+	text-shadow: 2px 2px 0 #00647A;
 }
 
 .pricing-light .pricing-footer h4 i {
