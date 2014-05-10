@@ -495,6 +495,7 @@
     <Content Include="assets\js\forms\order.js" />
     <Content Include="assets\js\forms\reg.js" />
     <Content Include="assets\js\forms\review.js" />
+    <Content Include="assets\js\pages\content.js" />
     <Content Include="assets\js\pages\index.js" />
     <Content Include="assets\js\pages\page_contacts.js" />
     <Content Include="assets\js\pages\page_portfolio.js" />
