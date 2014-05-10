@@ -114,7 +114,7 @@
     </div>
     <!-- End Dogs -->
 
-    <div class="owl-carousel-v1 hidden">
+    @*<div class="owl-carousel-v1 hidden">
         <div class="headline"><h2>DFW Lab Rescue Store</h2></div>
         <p>Help support our labs and look good while doing it! To see a listing of all products, <a target="_blank" href="http://www.cafepress.com/dfwlrrc">Click Here!</a></p>
 
@@ -123,7 +123,7 @@
                 <a class="owl-btn prev-v1"><i class="fa fa-angle-left"></i></a>
                 <a class="owl-btn next-v1"><i class="fa fa-angle-right"></i></a>
             </div>
-        </div><!--/navigation-->
+        </div>
 
         <div class="owl-slider" ng-controller="StoreCtrl">
             <div ng-repeat="product in products" class="item center-block">
@@ -134,7 +134,7 @@
                 <h5 class="text-center margin-top-0"><em>${{product.price}}</em></h5>
             </div>
         </div>
-    </div>
+    </div>*@
 
     <!-- Our Clients -->
     @*<div id="clients-flexslider" class="flexslider home clients">
@@ -164,11 +164,6 @@
             App.init();
             Index.initParallaxSlider();
             App.initCounter();
-            $('.owl-carousel-v1').hide();
-            setTimeout(function () {
-                OwlCarousel.initOwlCarousel();
-                $('.owl-carousel-v1').removeClass('hidden').fadeIn();
-            }, 1000);
         });
     </script>
 }

@@ -20,8 +20,8 @@ dfwLabRescueApp.controller('AdminDogCtrl', function ($scope, $http) {
     });
 });
 
-dfwLabRescueApp.controller("StoreCtrl", function ($scope, $http) {
-    $http.jsonp('http://widgets.cafepress.com/search/show/dfwlrrc?type=shop&callback=JSON_CALLBACK').success(function (data) {
-        $scope.products = data.product;
-    })
-});
+//dfwLabRescueApp.controller("StoreCtrl", function ($scope, $http) {
+//    $http.jsonp('http://widgets.cafepress.com/search/show/dfwlrrc?type=shop&callback=JSON_CALLBACK').success(function (data) {
+//        $scope.products = data.product;
+//    })
+//});
