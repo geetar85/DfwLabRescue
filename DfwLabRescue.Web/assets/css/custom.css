@@ -14,7 +14,7 @@
 }
 @media (min-width: 767px) {
     .dfwlr-header .navbar-nav {
-        margin-top: 45px;
+        margin-top: 55px;
     }
     .dfwlr-header .navbar-default {
         margin-top: -10px;
@@ -46,4 +46,30 @@
 }
 .dog .img-responsive{
     min-width:700px;
+}
+
+/* ----- Pricing boxes adjustment --- */
+.pricing-head h4 {
+	background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(255,255,255,1) 99%)
+}
+.pricing-light .pricing-footer h4 {
+	color: #ffffff;
+	padding: 5px;
+	font-size: 92px;
+	text-shadow: none;
+	margin: -2px 0 0px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+	background: #007E99;
+	font-family: 'lato';
+	text-shadow: 3px 3px 0 #00647A;
+}
+
+.pricing-light .pricing-footer h4 i {
+	/* top: -8px; */
+	font-size: 28px;
+	font-style: normal;
+	vertical-align: middle;
+	color: #f8f8f8;
 }
