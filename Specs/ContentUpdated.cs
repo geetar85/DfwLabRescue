@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace DfwLabRescue.Specs
 {
-    [TestClass]
     public class ContentUpdated
     {
-        [TestMethod]
-        [TestCategory("HTML Content is submitted & Http 200 Status Code is returned")]
+        [Fact]
+        [Trait("HTML Content is submitted & Http 200 Status Code is returned", "")]
         public void Success_Returned()
         {
         }
