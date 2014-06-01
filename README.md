@@ -10,3 +10,4 @@ DFW Lab Rescue Public Website
 - Web API 2
 - Raptor Editor for CMS
 - jQuery File Upload for images on CMS
+- AppVeyor for Continuous Integration (http://www.appveyor.com/)
